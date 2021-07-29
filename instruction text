@@ -1,0 +1,16 @@
+creation du projet docker
+docker-compose up -d
+
+connaitre id de container
+docker ps
+
+accés au bash du container
+docker exec -ti id-image-symfony5_php-fpm bash
+
+sur container lancer symfony serve:start
+
+accés projet via http://localhost:5000 voir dockerfile
+accés phpmyadmin via http://localhost:80 voir dockerfile
+
+db a configurer .env ou .env.local au choix
+DATABASE_URL="mysql://root:root@mysql:3306/test?serverVersion=5.7"
