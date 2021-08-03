@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon Compte CEDECOM
+{% endblock %}
+
+{% block content %}
+	<h1>mon compte</h1>
+	<p>Bienvenue
+		{{app.user.firstname}}
+		sur votre espace personnel vous retrouverez toute vos informations personnelles</p>
+	<hr>
+	-
+	<a href="{{path('account_password')}}">modifier mon mdp</a>
+	<br>
+	- ajouter mon adresse
+	<br>
+	- mes commandes
+	<br>
+</hr>{% endblock %}
