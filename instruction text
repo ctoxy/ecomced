@@ -14,3 +14,45 @@ accés phpmyadmin via http://localhost:80 voir dockerfile
 
 db a configurer .env ou .env.local au choix
 DATABASE_URL="mysql://root:root@mysql:3306/test?serverVersion=5.7"
+
+connaitre tout les services intégré dans symfony(session request etc)
+symfony console debug:autowiring
+
+ajout de bootstrap cote docker dossier symfony
+composer require symfony/webpack-encore-bundle
+puis installation des dependence associé
+npm install
+dans assets renommer app.css en app.scss et indique dans app.js passage de css vers scss
+
+webpack config decommenter sous // enables Sass/SCSS support
+installation de sass-loader
+npm i sass-loader@^9.0.1 node-sass --save-dev
+ajout sur base.html.twig
+{% block stylesheets%}
+	{{encore_entry_link_tags('app')}}
+{% endblock %}
+{% block javascripts%}
+	{{encore_entry_link_tags('app')}}
+{% endblock %}
+npm run build verifier que tout est ok 
+installation de postcss et autoprefixer
+npm i postcss-loader autoprefixer --dev
+creer a la racine de symfony postcss.config.js https://symfony.com/doc/current/frontend/encore/postcss.html
+webpack config
+npm run build verifier que tout est ok 
+installation de bootstrap
+npm i bootstrap@next
+
+dans assets/app.js
+//plugin necessaire
+import{Tooltip,Toast,Popover} from 'bootstrap';
+creation du fichier custom.scss dans assets/styles
+modifier fichier app.scss
+@import"custom";
+@import"~bootstrap/scss/bootstrap";
+body {
+    background-color: lightgray;
+}
+npm run build verifier que tout est ok 
+faire pour chaque modif malgre serveur demarrer npm run build pour la prise en compte
+
